@@ -1,19 +1,44 @@
 import { createFileRoute } from "@tanstack/react-router";
+import Navbar from "../components/Navbar";
+import HeroSection from "../components/HeroSection";
+import AboutSection from "../components/AboutSection";
+import ProgramsSection from "../components/ProgramsSection";
+import WhyChooseSection from "../components/WhyChooseSection";
+import TransformationSection from "../components/TransformationSection";
+import PricingSection from "../components/PricingSection";
+import TestimonialsSection from "../components/TestimonialsSection";
+import TrainersSection from "../components/TrainersSection";
+import ContactSection from "../components/ContactSection";
+import BlogSection from "../components/BlogSection";
+import NewsletterSection from "../components/NewsletterSection";
+import Footer from "../components/Footer";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "Fitnix – Wellness Website Template" },
+      { name: "description", content: "Fitnix is a high-performance fitness website Landing Page Template built for gyms, trainers, and wellness coaches." },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+function Index() {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen" style={{ backgroundColor: "var(--gym-dark)" }}>
+      <Navbar />
+      <HeroSection />
+      <AboutSection />
+      <ProgramsSection />
+      <WhyChooseSection />
+      <TransformationSection />
+      <PricingSection />
+      <TestimonialsSection />
+      <TrainersSection />
+      <ContactSection />
+      <BlogSection />
+      <NewsletterSection />
+      <Footer />
     </div>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }
